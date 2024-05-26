@@ -1,0 +1,58 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>rec5</groupId>
+    <artifactId>student-testing</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- JUnit 5 dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version> <!-- Use the latest version -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version> <!-- Use the latest version -->
+            <scope>test</scope>
+        </dependency>
+        <!-- Include any other dependencies required by your tests -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> 
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Use the latest version -->
+
+                <!-- Use JUnit 5 provider -->
+                <!-- <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.8.2</version>
+                    </dependency>
+                </dependencies> -->
+
+                <!-- Configuration to specify test classes directory -->
+                <configuration>
+                    <includes>
+                        <include>**/*Test*.class</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
